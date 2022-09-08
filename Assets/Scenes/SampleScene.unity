@@ -236,10 +236,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6991029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322644be1d6a79a42890f751f386244a, type: 3}
+  m_Script: {fileID: 11500000, guid: e7651a37f73ffca4dadfa2215258a7ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _value: 0
+  _player: {fileID: 879349098}
 --- !u!1 &68731497
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +323,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 68731500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 879349098}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &68731500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +540,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.738151
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -552,7 +564,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.04, y: 1.88, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -766,7 +778,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 25.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1045,7 +1057,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3824f9bb31b72fb42b227cbf74582bb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1158,7 +1170,7 @@ Animator:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d11e3df6c936b14698120aab38b0d75, type: 2}
+  m_Controller: {fileID: 9100000, guid: 65c934ae8b3d0e348b9bdaedf0ef991e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1177,11 +1189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a6585b00f30cc409dd2fb1b6986109, type: 3}
+  m_Script: {fileID: 11500000, guid: 60c16f7ed17e128408cc1bdfa37b9dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialHealth: 0
-  _maxHealth: 0
+  _initialHealth: 90
+  _maxHealth: 100
 --- !u!1 &962955303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1458,7 +1470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1581,7 +1592,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 25.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

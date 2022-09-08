@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class SliderValueSetter : MonoBehaviour
 {
-    [SerializeField] private float _value;
+    [SerializeField] private Player _player;
 
     private Slider _slider;
 
@@ -18,7 +18,7 @@ public class SliderValueSetter : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _slider.value = Mathf.Lerp(0f,1f, _value);
+        _slider.value = _player.DisplayedHealth;
 
     }
 }
