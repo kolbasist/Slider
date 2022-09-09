@@ -1,18 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
+[RequireComponent(typeof(Slider))]
 
 public class HealthBar : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Slider _slider;
+
+    private void Awake()
     {
-        
+        _slider = GetComponent<Slider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        EventManager.HeroHealthValueChanged.AddListener(SetSliderPosiiton);
+    }
+
+    private void SetSliderPosiiton(float value)
+    {
+        _slider.value = value;
     }
 }

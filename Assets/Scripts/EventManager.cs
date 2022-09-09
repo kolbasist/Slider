@@ -11,6 +11,7 @@ static public class EventManager
     public static UnityEvent<int> HealButtonPressed = new UnityEvent<int>();
     public static UnityEvent<float> HeroHealthValueChanged = new UnityEvent<float>();
     public static UnityEvent HeroDied = new UnityEvent();
+    public static UnityEvent HeroHealthValueFilled = new UnityEvent();
 
     public static void OnHitPressed(int damage)
     {
@@ -30,6 +31,11 @@ static public class EventManager
     public static void OnHeroDied()
     {
         HeroDied.Invoke();
+    }
+
+    public static void OnHeroHealthFilled()
+    {
+        HeroHealthValueFilled.Invoke();
     }
 }
 

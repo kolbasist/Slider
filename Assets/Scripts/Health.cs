@@ -23,6 +23,8 @@ public class Health : MonoBehaviour
             _health = _initialHealth;
         else 
             _health =(int)Mathf.Lerp(_minHealth, _maxHealth, _defaultHealthMultiplyer);
+
+        EventManager.OnHealthValueChanged(Mathf.Clamp01((float)_health / _maxHealth));
     }
 
     private void TakeDamage(int damage)
@@ -45,9 +47,27 @@ public class Health : MonoBehaviour
         }
         else if (_health - healthDelta > _maxHealth)
         {
-            _health = (int )Mathf.MoveTowards(_health, _maxHealth, -healthDelta );
+            Win();
+        }
+        else if (healthDelta >= _health)
+        {
+            Die();
         }
 
+        Debug.Log(_health);
+
         EventManager.OnHealthValueChanged(Mathf.Clamp01((float)_health / _maxHealth));
+    }
+
+    private void Die()
+    {
+        _health = _minHealth;
+        EventManager.OnHeroDied();
+    }
+
+    private void Win()
+    {
+        _health = _maxHealth;
+        EventManager.OnHeroHealthFilled();
     }
 }
