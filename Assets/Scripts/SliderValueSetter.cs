@@ -15,6 +15,5 @@ public class SliderValueSetter : MonoBehaviour
     private void FixedUpdate()
     {
         _slider.value = _player.DisplayedHealth;
-
     }
 }
