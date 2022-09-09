@@ -41,7 +41,7 @@ public class Health : MonoBehaviour
 
     private void ChangeHealthValue(int healthDelta)
     {
-        if(healthDelta < _health && _health - healthDelta <= _maxHealth)
+        if(Mathf.Abs(healthDelta) < _health && _health - healthDelta <= _maxHealth)
         {
             _health = (int)Mathf.MoveTowards(_health, _minHealth, healthDelta );
         }

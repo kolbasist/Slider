@@ -318,11 +318,11 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &68731500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 68731497}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05ca827dff2479344842a54d166104a5, type: 3}
+  m_Script: {fileID: 11500000, guid: 74e9213a8df8e9f46a1495946b76ee30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _hitDamage: 10
@@ -582,8 +582,8 @@ GameObject:
   - component: {fileID: 548610858}
   - component: {fileID: 548610861}
   - component: {fileID: 548610860}
-  - component: {fileID: 548610862}
   - component: {fileID: 548610859}
+  - component: {fileID: 548610862}
   m_Layer: 5
   m_Name: HealButton
   m_TagString: Untagged
@@ -663,7 +663,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 10
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -715,7 +715,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 548610857}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 833f0b7d343108a4e876d17444f1c9bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 807ebacb0580f014a8badc7444fa1959, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _restoredHealth: 10
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 25.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -863,8 +863,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 745706879}
-  - component: {fileID: 745706880}
   - component: {fileID: 745706881}
+  - component: {fileID: 745706880}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 745706878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab6d868cc47916e42b3c6239b113f17e, type: 3}
+  m_Script: {fileID: 11500000, guid: b835203f6de1c8540b11ee300cada764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &761246785
@@ -1044,9 +1044,9 @@ GameObject:
   m_Component:
   - component: {fileID: 879349095}
   - component: {fileID: 879349094}
-  - component: {fileID: 879349093}
-  - component: {fileID: 879349098}
   - component: {fileID: 879349099}
+  - component: {fileID: 879349098}
+  - component: {fileID: 879349093}
   - component: {fileID: 879349096}
   - component: {fileID: 879349097}
   m_Layer: 0
@@ -1097,7 +1097,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3824f9bb31b72fb42b227cbf74582bb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1210,7 +1210,7 @@ Animator:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5d11e3df6c936b14698120aab38b0d75, type: 2}
+  m_Controller: {fileID: 9100000, guid: 65c934ae8b3d0e348b9bdaedf0ef991e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1229,11 +1229,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66a6585b00f30cc409dd2fb1b6986109, type: 3}
+  m_Script: {fileID: 11500000, guid: d00969a3002cf5d4c8bf25f91c574bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialHealth: 120
   _maxHealth: 150
+  _initialHealth: 120
 --- !u!114 &879349099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,11 +1243,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d6f8dbfdccf0e347ac0f84ed8d49662, type: 3}
+  m_Script: {fileID: 11500000, guid: 60c16f7ed17e128408cc1bdfa37b9dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _initialHealth: 0
 --- !u!1 &962955303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1647,7 +1644,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 48.3
+  m_fontSize: 25.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
