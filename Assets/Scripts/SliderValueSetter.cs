@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.U2D.Path.GUIFramework;
-using UnityEditor.UI;
 using UnityEngine;
 using UnityEngine.UI;
 
