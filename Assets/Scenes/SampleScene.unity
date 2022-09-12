@@ -219,7 +219,7 @@ RectTransform:
   - {fileID: 68731498}
   - {fileID: 745706879}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -238,7 +238,6 @@ GameObject:
   - component: {fileID: 68731501}
   - component: {fileID: 68731500}
   - component: {fileID: 68731499}
-  - component: {fileID: 68731502}
   m_Layer: 5
   m_Name: HitButton
   m_TagString: Untagged
@@ -311,9 +310,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 68731502}
-        m_TargetAssemblyTypeName: HitButton, Assembly-CSharp
-        m_MethodName: OnButtonPressed
+      - m_Target: {fileID: 879349099}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 879349098}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: SetHitAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -361,19 +372,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68731497}
   m_CullTransparentMesh: 1
---- !u!114 &68731502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68731497}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74e9213a8df8e9f46a1495946b76ee30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hitDamage: 10
 --- !u!1 &215116763
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,7 +581,6 @@ GameObject:
   - component: {fileID: 548610861}
   - component: {fileID: 548610860}
   - component: {fileID: 548610859}
-  - component: {fileID: 548610862}
   m_Layer: 5
   m_Name: HealButton
   m_TagString: Untagged
@@ -656,9 +653,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 548610862}
-        m_TargetAssemblyTypeName: HealButton, Assembly-CSharp
-        m_MethodName: OnButtonPressed
+      - m_Target: {fileID: 879349099}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: Heal
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 10
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 879349098}
+        m_TargetAssemblyTypeName: AnimationSetter, Assembly-CSharp
+        m_MethodName: SetHealAnimation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -706,19 +715,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548610857}
   m_CullTransparentMesh: 1
---- !u!114 &548610862
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 548610857}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 807ebacb0580f014a8badc7444fa1959, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _restoredHealth: 10
 --- !u!1 &635353445
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,7 +800,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.95
+  m_fontSize: 48.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -890,10 +886,10 @@ RectTransform:
   m_Father: {fileID: 6991033}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.22800002, y: 0.9232223}
+  m_AnchorMin: {x: 0.22800002, y: 0.89737046}
   m_AnchorMax: {x: 0.78000003, y: 0.9583705}
-  m_AnchoredPosition: {x: -1.9608154, y: -1}
-  m_SizeDelta: {x: -8.839111, y: -10}
+  m_AnchoredPosition: {x: -1.9608154, y: 13}
+  m_SizeDelta: {x: -8.839111, y: -38}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745706880
 MonoBehaviour:
@@ -922,7 +918,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.05
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -955,9 +951,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 745706878}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b835203f6de1c8540b11ee300cada764, type: 3}
+  m_Script: {fileID: 11500000, guid: ab6d868cc47916e42b3c6239b113f17e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _changeSpeed: 0.25
 --- !u!1 &761246785
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,9 +1041,10 @@ GameObject:
   m_Component:
   - component: {fileID: 879349095}
   - component: {fileID: 879349094}
-  - component: {fileID: 879349099}
-  - component: {fileID: 879349098}
   - component: {fileID: 879349093}
+  - component: {fileID: 879349099}
+  - component: {fileID: 879349100}
+  - component: {fileID: 879349098}
   - component: {fileID: 879349096}
   - component: {fileID: 879349097}
   m_Layer: 0
@@ -1097,7 +1095,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3824f9bb31b72fb42b227cbf74582bb1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 84ce2f114ad12bd4ebafc77060220324, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1142,7 +1140,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &879349096
 PolygonCollider2D:
@@ -1210,7 +1208,7 @@ Animator:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 65c934ae8b3d0e348b9bdaedf0ef991e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5d11e3df6c936b14698120aab38b0d75, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1229,11 +1227,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d00969a3002cf5d4c8bf25f91c574bc6, type: 3}
+  m_Script: {fileID: 11500000, guid: 66a6585b00f30cc409dd2fb1b6986109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 150
-  _initialHealth: 120
 --- !u!114 &879349099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1243,9 +1239,80 @@ MonoBehaviour:
   m_GameObject: {fileID: 879349092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60c16f7ed17e128408cc1bdfa37b9dab, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d6f8dbfdccf0e347ac0f84ed8d49662, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 150
+  _initialHealth: 100
+  _heroHealthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879349100}
+        m_TargetAssemblyTypeName: DisplayedHealth, Assembly-CSharp
+        m_MethodName: ScaleHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _heroMaxHealthEstablished:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 879349100}
+        m_TargetAssemblyTypeName: DisplayedHealth, Assembly-CSharp
+        m_MethodName: GetMaxHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &879349100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 879349092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dea61de30fc5d40479cf8fefa438fd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 745706881}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: GetHealthValue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 879349098}
+        m_TargetAssemblyTypeName: PlayerAnimations.AnimationSetter, Assembly-CSharp
+        m_MethodName: GetHealth
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &962955303
 GameObject:
   m_ObjectHideFlags: 0
@@ -1351,7 +1418,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &962955307
 BoxCollider2D:
@@ -1414,8 +1481,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -17.252014}
+  m_SizeDelta: {x: 0, y: 34.504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1216707136
 MonoBehaviour:
@@ -1489,8 +1556,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5.000061, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: -7.500122, y: -17.2521}
+  m_SizeDelta: {x: -15, y: 34.504}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1662053737
 GameObject:
@@ -1522,6 +1589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1557,7 +1625,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1839931125
 GameObject:
@@ -1644,7 +1712,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.95
+  m_fontSize: 48.3
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1

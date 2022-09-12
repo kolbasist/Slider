@@ -1,73 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Health : MonoBehaviour
-{   
+{       
     [SerializeField] private int _maxHealth = 100;
     [SerializeField] private int _initialHealth;
-
-    private float _defaultHealthMultiplyer = 0.5f;
-    private int _health;
+    [SerializeField] private UnityEvent<int> _heroHealthChanged; 
+    [SerializeField] private UnityEvent<int> _heroMaxHealthEstablished;
+   
+    private int _health =  0;
     private int _minHealth = 0;
 
     private void OnEnable()
     {
-        EventManager.HitButtonPressed.AddListener(TakeDamage);
-        EventManager.HealButtonPressed.AddListener(Heal);        
-    }
-
-    private void Awake()
-    {
+        _heroMaxHealthEstablished.Invoke(_maxHealth);
         if (_initialHealth <= _maxHealth || _initialHealth >= _minHealth)
-            _health = _initialHealth;
+           ChangeHealthValue(_initialHealth);
         else 
-            _health =(int)Mathf.Lerp(_minHealth, _maxHealth, _defaultHealthMultiplyer);
-
-        EventManager.OnHealthValueChanged(Mathf.Clamp01((float)_health / _maxHealth));
+            ChangeHealthValue((int)Mathf.Clamp(_minHealth, _maxHealth, _initialHealth));
     }
 
-    private void TakeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         if (damage > 0)
-            ChangeHealthValue(damage);
+            ChangeHealthValue(-damage);
     }
 
-    private void Heal(int restoredHealth)
+    public void Heal(int restoredHealth)
     {
         if (restoredHealth > 0)
-            ChangeHealthValue(-restoredHealth);
+            ChangeHealthValue(restoredHealth);
     }
 
     private void ChangeHealthValue(int healthDelta)
     {
-        if(Mathf.Abs(healthDelta) < _health && _health - healthDelta <= _maxHealth)
-        {
-            _health = (int)Mathf.MoveTowards(_health, _minHealth, healthDelta );
-        }
-        else if (_health - healthDelta > _maxHealth)
-        {
-            Win();
-        }
-        else if (healthDelta >= _health)
-        {
-            Die();
-        }
-
-        Debug.Log(_health);
-
-        EventManager.OnHealthValueChanged(Mathf.Clamp01((float)_health / _maxHealth));
-    }
-
-    private void Die()
-    {
-        _health = _minHealth;
-        EventManager.OnHeroDied();
-    }
-
-    private void Win()
-    {
-        _health = _maxHealth;
-        EventManager.OnHeroHealthFilled();
+        _health = Mathf.Clamp(_health + healthDelta, _minHealth, _maxHealth);
+        _heroHealthChanged.Invoke(_health);
     }
 }
